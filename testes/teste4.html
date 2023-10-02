@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Javascript</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <form>
+        <p>Calculo de horas trabalhadas</p>
+        <input type="text" id="nome" value="Edson Emanoel"><br><br>
+        <input type="text" id="valor" > <span>Valor horas trabalhadas </span> <br><br>
+        <input type="text" id="qtd" > <span>Quantidade horas dia</span> <br><br>
+        <input type="text" id="resultado" disabled>  <span>Total do dia</span>  <br><br>
+        <button>Calcular</button>
+        <button type="reset">Limpar</button>
+    </form>
+
+    <div>
+        <p>Total semana:  <span id="semana"></span> </p>
+        <p>Total quizena: <span id="quinzena"></span></p>
+        <p>Total mês:     <span id="mes"></span></p>
+    </div>
+
+    <script>
+        let text__h1    = document.querySelector('h1').textContent;
+        let text__p     = document.querySelector('p').textContent;
+        let input__rs   = document.querySelector('#resultado');
+
+        function moeda(valor = 0){
+            return valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        }
+
+        addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            valor = Number( input__valor = document.querySelector('#valor').value );
+            qtd = Number( input__valor = document.querySelector('#qtd').value ) ;
+
+            calc = valor * qtd;
+            input__rs.value = calc;
+
+            let valor__semana = calc * 6;
+            let valor__quinzena = calc * 12;
+            let valor__mes = calc * 24;
+
+            let s = document.querySelector('#semana').textContent = moeda(valor__semana);
+
+            let q = document.querySelector('#quinzena').textContent = moeda(valor__quinzena);
+
+            let m = document.querySelector('#mes').textContent = moeda(valor__mes);
+
+            console.log(
+                "Semana: " + moeda(valor__semana) + "\n" +
+                "quinzena: " + moeda(valor__quinzena) + "\n" +
+                "mês: " + moeda(valor__mes)
+            )
+
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Teste Javascript</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <form>
+        <p>Contador</p>
+        <p>
+            <button class="plus" onclick="adicionar()"><i class="fa-solid fa-plus"></i></button>
+            <span class="number" id="valor">0</span>
+            <button class="minus" onclick="remover()"><i class="fa-solid fa-minus"></i></button>
+        </p>
+        <button type="reset">Limpar</button>
+    </form>
+
+    <div>
+        <p>Total semana:  <span id="semana"></span> </p>
+        <p>Total quizena: <span id="quinzena"></span></p>
+        <p>Total mês:     <span id="mes"></span></p>
+    </div>
+
+    <script>
+
+       // let valor = Number(document.querySelector('#valor').textContent);
+       var item = 1;
+
+       let adicionar = async () => {
+            let valor = await Number(document.querySelector('#valor').textContent = item++ )
+       }
+       let remover = async () => {
+            let valor2 = await Number(document.querySelector('#valor').textContent = item--)
+       }
+
+       addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        adicionar();
+        
+       })
+
+    </script>
+</body>
+</html>

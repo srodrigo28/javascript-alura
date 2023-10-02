@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Javascript</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <form>
+        <p>Esse é um teste javascript</p>
+        <input type="text" id="nome" value="Edson Emanoel"><br><br>
+        <input type="text" id="valor" > <br><br>
+        <input type="text" id="qtd" > <br><br>
+        <input type="text" id="resultado" disabled> <br><br>
+        <button>Calcular</button>
+    </form>
+
+    <script>
+        let text__h1 = document.querySelector('h1').textContent;
+        let text__p = document.querySelector('p').textContent;;
+        let input__valor = document.querySelector('#valor')
+        let input__qtd = document.querySelector('#qtd');
+        let input__rs = document.querySelector('#resultado');
+
+        addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            var valor = Number(input__valor.value)
+            var qtd = Number(input__qtd.value)
+            var rs = Number(input__qtd.value)
+            
+            var calculo = valor * qtd;
+            input__rs.value = calculo;
+            console.log(input__rs)
+
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testa Função</title>
+</head>
+<body>
+    <h1>Testando função</h1>
+
+        <form>
+            <input type="text" placeholder="nome">
+            <input type="text" placeholder="idade">
+            <select name="profile" id="profile">
+                <option selected>Selecione</option>
+                <option value="administrator">Administrador</option>
+                <option value="seller">Vendedor</option>
+                <option value="buyer">Comprador</option>
+            </select>
+
+            <button>Cadastrar</button>
+            <button type="reset">Limpar</button>
+        </form>
+
+    <script>
+        let profile = document.querySelector("#profile")
+        
+        function validar1(){
+            alert('Validar 1')
+        }
+        function validar2(){
+            // alert('Validar 2')
+
+            if(profile.value === 'administrator'){
+                confirm("Tu é um administrator")
+            }else if(profile.value === 'seller'){
+                confirm("tu é um Vendedor")
+            }else if(profile.value === 'buyer'){
+                confirm("tu é um comprador")
+            }else{
+                confirm("Por favor selecionar um perfil")
+            }
+        }
+        function validar3(){
+            alert('Validar 3')
+        }
+
+        addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            validar2();
+        })
+    </script>
+</body>
+</html>
