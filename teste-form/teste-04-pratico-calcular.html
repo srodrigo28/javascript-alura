@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 04</title>
+</head>
+<body>
+    <h1>Teste 04</h1>
+
+    <!-- HTML Simples -->
+    <form>
+        <input type="text" id="nome"   value="Danillo Willian"> <br><br>
+        
+        <label>Valor do Produto</label> <br>
+        <input type="text" id="valor" > <br><br>
+        
+        <label>Quantidade</label><br>
+        <input type="text" id="qtd" > <br><br>
+        
+        <input type="text" id="result" value="0,00"  disabled> <br><br>
+        
+        <button>Calcular</button>
+    </form>
+
+    <!-- Estilo simples-->
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+
+    <!-- Processamento -->
+    <script>
+        
+        const validar = () => {
+            let valor = document.querySelector("#valor").value
+            let qtd = document.querySelector("#qtd").value
+
+            if( valor === "" ){
+                alert("Valor precisa ser no minimo 1,00 ")
+            }else if( qtd === "" ){
+                alert("Quantidate precisa ser no minimo 1 ")
+            }else{
+               // alert("Cadastrado com sucesso ")
+            }
+
+        }
+
+        const moeda = (valor = 0) => {
+            return valor.toLocaleString(
+                'pt-br',
+                { style: 'currency', currency: 'BRL'}
+            );
+        }
+
+        const calcular  = async () => {
+            validar();
+
+            let valor = document.querySelector("#valor").value
+            let qtd = document.querySelector("#qtd").value
+
+            let calc  = await moeda(valor * qtd);
+
+            let result  =  document.querySelector("#result").value = calc;
+            // console.log("Resultado do calculo: " + calc)
+            
+        }
+        
+        addEventListener('submit', (e) => {
+           e.preventDefault();
+           calcular();
+        })
+
+    </script>
+
+</body>
+</html>

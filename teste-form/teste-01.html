@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 01</title>
+</head>
+<body>
+    <h1>Teste 01</h1>
+
+    <form>
+        <input type="text" id="nome"  value="Danillo Willian" placeholder="PlayStation 3">    <br><br>
+        <input type="text" id="valor" value="20"            placeholder="1.000">            <br><br>
+        <input type="text" id="qtd"   value="10"              placeholder="10">               <br><br>
+        <input type="text" id="result" value="0,00"           placeholder="R$ 0,00" disabled> <br><br>
+        <button>Calcular</button>
+    </form>
+
+    <script>
+        let nome = document.querySelector("#nome")
+        let valor = document.querySelector("#valor")
+        let qtd = document.querySelector("#qtd")
+        let result = document.querySelector("#result")
+
+        console.log(
+            "1. :: Console 1 :: Pegandos os valores do campo input por inteiro \n " +
+            nome, valor, qtd, result
+        );
+
+        console.log(
+            "2. :: Console 2 :: Pegando somente os valores \n " +
+            nome.value + "\n",
+            valor.value + "\n",
+            qtd.value + "\n",
+            result.value
+        );
+
+        console.log(
+            " 3. :: Console 3 :: Descobrindo os tipos de dados \n " +
+            "campo nome: " + typeof(nome.value) + "\n",
+            "campo valor: " + typeof(valor.value) + "\n",
+            "campo qtd: " + typeof(qtd.value) + "\n",
+            "campo result: " + typeof(result.value)
+        );
+
+        valor = parseFloat(valor.value); // 10,50, 11,25
+        qtd = parseInt(qtd.value); // 1, 2, 10, 100, 200, 
+
+        console.log("4 :: Convertido campos ");
+        console.log("Convertido campo valor " + typeof(valor));
+        console.log("Convertido campo Quantidade " + typeof(qtd));
+
+        const calcularProduto = () => {
+            let calcular = valor * qtd;
+            console.log("Resultado do calculo: " + calcular)
+        }
+        
+        calcularProduto();
+        
+    </script>
+
+
+</body>
+</html>

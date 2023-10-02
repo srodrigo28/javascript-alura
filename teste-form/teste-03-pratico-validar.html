@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 03</title>
+</head>
+<body>
+    <h1>Teste 03</h1>
+
+    <form>
+        <input type="text" id="nome"   required  value="Danillo Willian" placeholder="PlayStation 3">    <br><br>
+        <input type="text" id="valor"  required              placeholder="1.000">            <br><br>
+        <input type="text" id="qtd"    required               placeholder="10">               <br><br>
+        <input type="text" id="result" required  value="0,00"            placeholder="R$ 0,00" disabled> <br><br>
+        <button onclick="validar()">Calcular</button>
+    </form>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+
+    <script>
+        
+        const validar = () => {
+            let valor = document.querySelector("#valor").value
+            let qtd = document.querySelector("#qtd").value
+
+            if( valor === "" ){
+                alert("Valor precisa ser no minimo 1,00 ")
+            }else if( qtd === "" ){
+                alert("Quantidate precisa ser no minimo 1 ")
+            }else{
+                alert("Cadastrado com sucesso ")
+            }
+
+        }
+
+        const calcular = () => {
+            let calc = valor * qtd
+            console.log("Resultado do calculo: " + calc)
+        }
+        calcular();
+
+    </script>
+
+
+</body>
+</html>
