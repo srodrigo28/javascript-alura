@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Eventos</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    <input type="text" value="ana flavia" placeholder="nome" id="nome" >
+    <input type="text" value="62-9998762" placeholder="telefone" id="telefone" >
+
+    <button>Cadastrar</button>
+
+    <script>
+
+        let nome = document.querySelector("#nome").value;
+        let telefone = document.getElementById("telefone").value;
+
+        console.log(nome)
+        console.log(telefone)
+
+        const validar = () => {
+
+        }
+
+        addEventListener('', (e) => {
+            e.preventDefault();
+        })
+
+    </script>
+</body>
+</html>
