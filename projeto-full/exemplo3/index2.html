@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App JsonServer 2</title>
+</head>
+<body>
+
+    <form id="form-name">
+        <h2>Cadastrar Tabela</h2>
+
+        <input type="hidden" id="codigo" name="id" value="02">
+
+        <label>Nome produto</label> <br>
+        <input type="text" id="nome" name="nome"> <br><br>
+        
+        <label>Valor do Produto</label> <br>
+        <input type="text" id="valor"   name="valor" > <br><br>
+        
+        <label>Quantidade</label><br>
+        <input type="text" id="qtd"     name="qtd" >  <br><br>
+        
+        <label>Total postProdutos</label><br>
+        <input type="text" id="result"  name="result"  value="0,00"  disabled> <br><br>
+        
+        <button id="adicionar">Inserir</button> <br><br>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>valor</th>
+                <th>quantidade</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody  id="tabela-produtos">
+            <tr class="produto">
+                <td class="info-codigo">01</td>
+                <td class="info-nome">Produto 1</td>
+                <td class="info-valor">R$ 200</td>
+                <td class="info-qtd">10</td>
+                <td class="info-result">R$ 2.000,00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./js/inserirTabela.js"></script>
+</body>
+</html>
