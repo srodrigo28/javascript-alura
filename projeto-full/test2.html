@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Listar</h1>
+        <div id="lista"></div>
+        <input type="button" onclick="gerar()" value="Clique">
+    </div> 
+
+    <script>
+        function gerar(){
+            let nomes = ["Diego", "Gabriel", "Lucas"];
+
+            let nomes2 = [
+                {"nome": "Ana Julia", "idade": 19},
+                {"nome": "Maria Joaquina", "idade": 26},
+            ];
+
+            let lista = document.getElementById('lista');
+            
+            // for(var i = 0; i < nomes.length; i++){
+            //     let item = document.createElement('p');
+            //     item.appendChild(document.createTextNode(nomes[i]));
+            //     lista.appendChild(item);
+            // }
+
+            for(var i = 0; i < nomes2.length; i++){
+                console.log(nomes2);
+                let item = document.createElement('p');
+                item.appendChild(document.createTextNode(nomes2[0]['nome']));
+                item.appendChild(document.createTextNode(nomes2[1]['idade']));
+                lista.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>

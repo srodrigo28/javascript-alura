@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App JsonServer</title>
+</head>
+<body>
+    <h1>Cadastrar</h1>
+
+    <!-- HTML Simples -->
+    <form>
+        <input type="text" id="nome"   value="Danillo Willian"> <br><br>
+        
+        <label>Valor do Produto</label> <br>
+        <input type="text" id="valor" > <br><br>
+        
+        <label>Quantidade</label><br>
+        <input type="text" id="qtd" > <br><br>
+        
+        <input type="text" id="result" value="0,00"  disabled> <br><br>
+        
+        <button>Calcular</button>
+        <button onclick="postProdutos()">Inserir</b utton>
+    </form>
+
+    
+
+    <!-- Estilo simples-->
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+
+    <!-- Processamento -->
+    <script>
+        
+        const validar = () => {
+            let valor = document.querySelector("#valor").value
+            let qtd = document.querySelector("#qtd").value
+
+            if( valor === "" ){
+                alert("Valor precisa ser no minimo 1,00 ")
+            }else if( qtd === "" ){
+                alert("Quantidate precisa ser no minimo 1 ")
+            }else{
+               // alert("Cadastrado com sucesso ")
+            }
+
+        }
+
+        const moeda = (valor = 0) => {
+            return valor.toLocaleString(
+                'pt-br',
+                { style: 'currency', currency: 'BRL'}
+            );
+        }
+
+        const calcular  = async () => {
+            validar();
+
+            let valor = document.querySelector("#valor").value
+            let qtd = document.querySelector("#qtd").value
+
+            let calc  = await moeda(valor * qtd);
+
+            let result  =  document.querySelector("#result").value = calc;
+            // console.log("Resultado do calculo: " + calc)
+        }
+        
+        addEventListener('submit', (e) => {
+           e.preventDefault();
+           calcular();
+        })
+    
+        async function getProdutos() {
+            try {
+                const response = await axios.get('http://localhost:8080/produto');
+                console.log(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        getProdutos();
+
+        /** Post Produtos  */
+        async function postProdutos() {
+
+            let nome  =  document.querySelector("#nome").value
+            let qtd = document.querySelector("#qtd").value
+            let valor = document.querySelector("#valor").value
+            const { data } = axios.post('http://localhost:8080/produto', {
+                nome: nome,
+                qtd: qtd,
+                valor: valor
+            }, {
+                headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+        }
+        // postProdutos();
+    </script>
+
+</body>
+</html>
