@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-family: 'Courier New', Courier, monospace;
+
+    background-color: #0C0C0D;
+    color: #edeaf0;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+.select{
+    padding: 6rem;
+}
+#categorya-select label{
+    font-size: 0.75rem;
+    letter-spacing: 0.3rem;
+}
+
+#select-button{
+    margin-top: .5rem;
+    display: flex;
+    padding: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: .38rem;
+    border: 1px solid #252529;
+    background-color: #17171A;
+}
+
+#selected-value{
+    color: #AFABB6;
+    font-size: 0.88rem;
+    letter-spacing: 0.027rem;
+}
+
+#chevrons svg{
+    width: 1rem;
+    height: 1rem;
+}
+#chevrons{
+    color: #AFABB6;
+}
+#chevrons [data-lucide="chevron-up"]{
+    display: none;
+}
+
+#options-view-button:focus + #select-button,
+#options-view-button:checked + #selected-button{
+    outline: 1px solid #A881E6;
+}
+
+#category-select:has(#options-view-button:checked) label,
+#options-view-button:checked + #select-button #chevrons{
+    color: solid #A881E6;
+}
+
+#options-view-button:checked + #select-button #chevrons
+[data-lucide="chevron-down"]{
+    display: none;
+}
+
+#options-view-button:checked + #select-button #chevrons
+[data-lucide="chevron-up"]{
+    display: block;
+}
