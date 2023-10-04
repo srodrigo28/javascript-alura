@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else-if</title>
+</head>
+<body>
+    <h1>Else if</h1>
+
+    <form>
+        <select id="sexo">
+            <option selected>Perfil</option>
+            <option value="vendedor">Vendedor</option>
+            <option value="comprador">Comprador</option>
+            <option value="administrador">Administrador</option>
+        </select>
+        <button onclick="testar()">Testar</button>
+    </form>
+
+    <script>
+        let nome2 = document.getElementById("nome");
+        
+        function testar(){
+            const profile = document.querySelector("#sexo").value;
+            
+            if(profile === "vendedor"){
+                alert("Vendedor: ")
+                window.location = "pages/seller.html"
+            }else if(profile === "comprador"){
+                alert("Comprador: ")
+                window.location = "pages/buyer.html"
+            }else if(profile === "administrador"){
+                alert("Administrador: ")
+                window.location = "pages/admin.html"
+            }
+
+        }
+    </script>
+</body>
+</html>
