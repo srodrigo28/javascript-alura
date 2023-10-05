@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+        <form>
+            <input type="text" id="nome" placeholder="">
+            <button>Entrar</button>
+        </form>
+    <script>
+
+        /** Eventos
+         * load
+         * click
+         * submit
+         * dblclick
+         * mousedown
+         * blur
+         * keydown
+         * keyup
+         * change
+        */
+
+        /** Pegado dados
+         * textContent
+         * innerHTML
+         * value
+        */
+
+       const cadastrar = () => {
+            let nome = document.querySelector("#nome").value
+            alert("cadastrado com sucesso: " + nome);
+       }
+
+       const veryInput = () => {
+            let nome = document.querySelector("#nome").value
+
+            nome = Number(nome)
+
+            alert( typeof(nome) )
+
+            nome = String(nome)
+
+            alert( typeof(nome) )
+       }
+
+       const limpar = () => {
+            let nome = document.querySelector("#nome").value = ""
+       }
+       
+       addEventListener("submit", () => {
+            // cadastrar()
+            // limpar()
+            veryInput()
+       }) 
+
+    </script>
+</body>
+</html>
